@@ -20,6 +20,8 @@
                     <form method="GET" action="{{ route('calc.result') }}">
                     @csrf
 
+                    固定費として含めるか選択してください。
+
                     日用品
                     <input type="radio" name="daily_necessities" value="0">含めない
                     <input type="radio" name="daily_necessities" value="1" checked="checked">含める
