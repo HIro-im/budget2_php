@@ -21,6 +21,7 @@
                     @csrf
 
                     固定費として含めるか選択してください。
+                    <br>
 
                     日用品
                     <input type="radio" name="daily_necessities" value="0">含めない
