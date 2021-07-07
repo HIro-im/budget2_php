@@ -36,7 +36,7 @@ class CalcController extends Controller
         $daily_necessities_avg = DB::table('budget_forms')->where('user_id', '=', Auth::id())
         ->avg('daily_necessities');
         $daily_necessities_avg = floor($daily_necessities_avg);
-        if ($request->daily_necessities === 1){
+        if ($request->daily_necessities === '1'){
             $avg_sum += $daily_necessities_avg;
         }
 
