@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/login');
 });
 
 //テスト用のルート
@@ -31,6 +31,8 @@ Route::group(['prefix' => 'calc', 'middleware' => 'auth'], function(){
     Route::get('input', 'CalcController@input')->name('calc.input');
     Route::get('result', 'CalcController@result')->name('calc.result');
 });
+
+//Laravelで作成した認証のルート
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
