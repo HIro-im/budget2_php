@@ -38,4 +38,4 @@ Route::group(['prefix' => 'calc', 'middleware' => 'auth'], function(){
 //Laravelで作成した認証のルート
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->middleware('auth')->name('home');
