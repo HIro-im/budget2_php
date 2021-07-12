@@ -24,6 +24,9 @@ Route::group(['prefix' => 'budget', 'middleware' => 'auth'], function(){
     Route::get('index', 'BudgetFormController@index')->name('budget.index');
     Route::get('create', 'BudgetFormController@create')->name('budget.create');
     Route::post('store', 'BudgetFormController@store')->name('budget.store');
+    Route::get('show/{id}', 'BudgetFormController@show')->name('budget.show');
+    Route::get('edit/{id}', 'BudgetFormController@edit')->name('budget.edit');
+    Route::post('update/{id}', 'BudgetFormController@update')->name('budget.update');
 });
 
 //計算処理用のルート

@@ -29,6 +29,7 @@
                           <th scope="col">趣味・娯楽</th>
                           <th scope="col">衣服・美容</th>
                           <th scope="col">健康・医療</th>
+                          <th scope="col">詳細</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -41,6 +42,7 @@
                           <td>{{ $budget->entertainment}}</td>
                           <td>{{ $budget->clothing}}</td>
                           <td>{{ $budget->medical}}</td>
+                          <td><a href="{{ route('budget.show', ['id' => $budget->id]) }}">詳細を見る</a></td>
                           </tr>
                           @endforeach
                       </tbody>
