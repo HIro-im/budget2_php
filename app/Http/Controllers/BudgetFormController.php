@@ -130,6 +130,11 @@ class BudgetFormController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //詳細画面にて選択している月を削除する
+        $budget_month = BudgetForm::find($id);
+        $budget_month->delete();
+
+        return redirect('budget/index');
+
     }
 }

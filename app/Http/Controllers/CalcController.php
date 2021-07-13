@@ -20,7 +20,7 @@ class CalcController extends Controller
     {
         //
 
-    return view('calc.input', /*compact('budgets')*/);
+    return view('calc.input');
     }
 
     // 平均金額計算と何か月持つかを算出する
@@ -86,85 +86,4 @@ class CalcController extends Controller
     return view('calc.result', compact('daily_necessities_avg','food_avg','education_avg','entertainment_avg','clothing_avg','medical_avg','number_of_months'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-        return view('budget.create');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-
-        $budget = new BudgetForm;
-
-        $budget->month = $request->input('month');
-        $budget->daily_necessities = $request->input('daily_necessities');
-        $budget->food = $request->input('food');
-        $budget->education = $request->input('education');
-        $budget->entertainment = $request->input('entertainment');
-        $budget->clothing = $request->input('clothing');
-        $budget->medical = $request->input('medical');
-
-        $budget->save();
-
-        return redirect('budget/index');
-        // dd($month);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }
