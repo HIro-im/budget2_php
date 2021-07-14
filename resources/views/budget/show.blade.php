@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">詳細画面</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +14,6 @@
                         </div>
                     @endif
 
-                    showです
                     {{ $budget_month->budget_date }}
                     {{ $budget_month->daily_necessities }}
                     {{ $budget_month->food }}
@@ -28,7 +27,7 @@
                     <form method="GET" action="{{route('budget.edit', ['id' => $budget_month->id])}}">
                     @csrf
 
-                    <input class="btn btn-info" type="submit" value="変更する">
+                    <input class="btn btn-info" type="submit" value="修正する">
                     </form>
 
                     <form method="POST" action="{{route('budget.destroy', ['id' => $budget_month->id])}}" id="delete_{{ $budget_month->id }}" >

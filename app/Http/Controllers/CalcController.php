@@ -83,7 +83,7 @@ class CalcController extends Controller
 
 
 
-    return view('calc.result', compact('daily_necessities_avg','food_avg','education_avg','entertainment_avg','clothing_avg','medical_avg','number_of_months'));
+    return view('calc.result', compact('daily_necessities_avg','food_avg','education_avg','entertainment_avg','clothing_avg','medical_avg','avg_sum','number_of_months'));
     }
 
 }

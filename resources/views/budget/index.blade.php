@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">一覧画面</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -42,7 +42,7 @@
                           <td>{{ $budget->entertainment}}</td>
                           <td>{{ $budget->clothing}}</td>
                           <td>{{ $budget->medical}}</td>
-                          <td><a href="{{ route('budget.show', ['id' => $budget->id]) }}">詳細を見る</a></td>
+                          <td><a href="{{ route('budget.show', ['id' => $budget->id]) }}">詳細</a></td>
                           </tr>
                           @endforeach
                       </tbody>
