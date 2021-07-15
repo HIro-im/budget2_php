@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">詳細画面</div>
 
@@ -14,16 +14,32 @@
                         </div>
                     @endif
 
-                    {{ $budget_month->budget_date }}
-                    {{ $budget_month->daily_necessities }}
-                    {{ $budget_month->food }}
-                    {{ $budget_month->education }}
-                    {{ $budget_month->entertainment }}
-                    {{ $budget_month->clothing }}
-                    {{ $budget_month->medical }}
-                    {{ $budget_month->created_at }}
-
-
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">支出年月</th>
+                          <th scope="col">日用品</th>
+                          <th scope="col">食費</th>
+                          <th scope="col">教養・教育</th>
+                          <th scope="col">趣味・娯楽</th>
+                          <th scope="col">衣服・美容</th>
+                          <th scope="col">健康・医療</th>
+                          <th scope="col">登録日時</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                          <th>{{ $budget_month->budget_date}}</th>
+                          <td>{{ $budget_month->daily_necessities}}</td>
+                          <td>{{ $budget_month->food}}</td>
+                          <td>{{ $budget_month->education}}</td>
+                          <td>{{ $budget_month->entertainment}}</td>
+                          <td>{{ $budget_month->clothing}}</td>
+                          <td>{{ $budget_month->medical}}</td>
+                          <td>{{ $budget_month->created_at}}</td>
+                          </tr>
+                      </tbody>
+                    </table>
                     <form method="GET" action="{{route('budget.edit', ['id' => $budget_month->id])}}">
                     @csrf
 
