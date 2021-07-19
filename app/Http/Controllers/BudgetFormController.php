@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\BudgetForm;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\StoreBudgetForm;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 class BudgetFormController extends Controller
 {
@@ -46,7 +49,7 @@ class BudgetFormController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreBudgetForm $request)
     {
         //
 
@@ -104,8 +107,20 @@ class BudgetFormController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //詳細画面にて選択している月を修正する
+        //詳細画面にて選択している月を修正する。
         $budget_month = BudgetForm::find($id);
+
+        //バリデーション(新規作成とは違い、同じ年月のデータを入れられるようにする)
+        Validator::make($request->all(),[
+            'budget_date' => ['required',Rule::unique('budget_forms')->ignore($id)],
+            'daily_necessities' => ['required','regex:/^[0-9]/','integer'],
+            'food' => ['required','regex:/^[0-9]/','integer'],
+            'education' => ['required','regex:/^[0-9]/','integer'],
+            'entertainment' => ['required','regex:/^[0-9]/','integer'],
+            'clothing' => ['required','regex:/^[0-9]/','integer'],
+            'medical' => ['required','regex:/^[0-9]/','integer']
+        ])->validate();
+
 
         $budget_month->budget_date = $request->input('budget_date');
         $budget_month->user_id = Auth::id();

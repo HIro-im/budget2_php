@@ -16,8 +16,8 @@
                     <form method="GET" action="{{ route('budget.create') }}">
                     <button type="submit" class="btn btn-primary">支出登録</button>
                     </form>
-                    <form method="GET" action="{{ route('calc.input') }}">
-                    <button type="submit" class="btn btn-primary">計算処理</button>
+                    <form method="GET" action="{{ route('home') }}">
+                    <button type="submit" class="btn btn-primary">メニューに戻る</button>
                     </form>
                     <table class="table">
                       <thead>

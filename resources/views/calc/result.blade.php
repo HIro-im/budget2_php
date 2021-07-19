@@ -85,6 +85,10 @@
                         <div class="col-sm-2">
                         <input type="text" class="form-control" name="term" id="number_of_months" value={{$number_of_months}} readonly='readonly'>
                         </div>
+                        <div class="col-sm-2">
+                        ヶ月
+                        </div>
+                        <small id="emailHelp" class="form-text text-muted">小数点以下は切り捨てて表示</small>
                     </div>
                     <div class="form-group row">
                         <label for="sum_fix" class="col-sm-2 col-form-label">固定費の合計額</label>
@@ -93,8 +97,11 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">計算する</button>
                     </form>
+                    <form method="GET" action="{{ route('calc.input') }}">
+                    <button type="submit" class="btn btn-primary">選択画面に戻る</button>
+                    </form>
+
                 </div>
             </div>
         </div>

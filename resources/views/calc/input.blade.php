@@ -13,14 +13,15 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <form method="GET" action="{{ route('budget.create') }}">
-                    <button type="submit" class="btn btn-primary">支出登録</button>
-                    </form>
 
+
+                    <form method="GET" action="{{ route('home') }}">
+                    <button type="submit" class="btn btn-primary">メニューに戻る</button>
+                    </form>
                     <form method="GET" action="{{ route('calc.result') }}">
                     @csrf
 
-                    固定費として含めるか選択してください。
+                    各項目を固定費として含めるか選択してください。
                     <br>
                     <br>
 
@@ -60,7 +61,7 @@
                             <label class="form-check-label" for="inputDaily_necesities0">含めない</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="daily_necesities" id="inputDaily_necesities1" value="1">
+                            <input class="form-check-input" type="radio" name="daily_necesities" id="inputDaily_necesities1" value="1" checked="checked">
                             <label class="form-check-label" for="inputDaily_necesities1">含める</label>
                         </div>
                     </div>
@@ -71,7 +72,7 @@
                             <label class="form-check-label" for="inputFood0">含めない</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="food" id="inputFood1" value="1">
+                            <input class="form-check-input" type="radio" name="food" id="inputFood1" value="1" checked="checked">
                             <label class="form-check-label" for="inputFood1">含める</label>
                         </div>
                     </div>
@@ -82,7 +83,7 @@
                             <label class="form-check-label" for="inputEducation0">含めない</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="education" id="inputEducation1" value="1">
+                            <input class="form-check-input" type="radio" name="education" id="inputEducation1" value="1" checked="checked">
                             <label class="form-check-label" for="inputEducation1">含める</label>
                         </div>
                     </div>
@@ -93,7 +94,7 @@
                             <label class="form-check-label" for="inputEntertainment0">含めない</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="entertainment" id="inputEntertainment1" value="1">
+                            <input class="form-check-input" type="radio" name="entertainment" id="inputEntertainment1" value="1" checked="checked">
                             <label class="form-check-label" for="inputEntertainment1">含める</label>
                         </div>
                     </div>
@@ -104,7 +105,7 @@
                             <label class="form-check-label" for="inputClothing0">含めない</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="clothing" id="inputClothing1" value="1">
+                            <input class="form-check-input" type="radio" name="clothing" id="inputClothing1" value="1" checked="checked">
                             <label class="form-check-label" for="inputClothing1">含める</label>
                         </div>
                     </div>
@@ -115,7 +116,7 @@
                             <label class="form-check-label" for="inputMedical0">含めない</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="medical" id="inputMedical1" value="1">
+                            <input class="form-check-input" type="radio" name="medical" id="inputMedical1" value="1" checked="checked">
                             <label class="form-check-label" for="inputMedical1">含める</label>
                         </div>
                     </div>

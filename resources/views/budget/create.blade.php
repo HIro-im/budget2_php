@@ -14,6 +14,10 @@
                         </div>
                     @endif
 
+                    <form method="GET" action="{{ route('budget.index') }}">
+                    <button type="submit" class="btn btn-primary">一覧に戻る</button>
+                    </form>
+
                     <form method="POST" action="{{ route('budget.store') }}">
                     @csrf
                     <!-- 支出年月 仮でINT型で取るようにする  -->
@@ -36,7 +40,16 @@
                     <br>
                     健康・医療
                     <input type="number" name="medical" value="0">円
-                    <br> --> 
+                    <br> -->
+
+                    @if ($errors->any())
+                        <ul>
+                            @foreach ($errors->all() as $message)
+                            <!-- 全てのエラーメッセージを出力 -->
+                            <li>{{ $message }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
 
                     <div class="form-group row">
                         <label for="inputMonth" class="col-sm-2 col-form-label">支出年月</label>

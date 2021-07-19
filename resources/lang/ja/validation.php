@@ -45,7 +45,7 @@ return [
     'image'                => ':attributeには画像ファイルを指定してください。',
     'in'                   => ':attributeには:valuesのうちいずれかの値を指定してください。',
     'in_array'             => ':attributeが:otherに含まれていません。',
-    'integer'              => ':attributeには整数を指定してください。',
+    'integer'              => ':attributeには整数を入力してください。',
     'ip'                   => ':attributeには正しい形式のIPアドレスを指定してください。',
     'ipv4'                 => ':attributeには正しい形式のIPv4アドレスを指定してください。',
     'ipv6'                 => ':attributeには正しい形式のIPv6アドレスを指定してください。',
@@ -67,8 +67,8 @@ return [
     'not_in'               => ':attributeには:valuesのうちいずれとも異なる値を指定してください。',
     'numeric'              => ':attributeには数値を指定してください。',
     'present'              => ':attributeには現在時刻を指定してください。',
-    'regex'                => '正しい形式の:attributeを指定してください。',
-    'required'             => ':attributeは必須です。',
+    'regex'                => '正しい形式の:attributeを入力してください。',
+    'required'             => ':attributeは必ず登録してください。',
     'required_if'          => ':otherが:valueの時:attributeは必須です。',
     'required_unless'      => ':otherが:values以外の時:attributeは必須です。',
     'required_with'        => ':valuesのうちいずれかが指定された時:attributeは必須です。',
@@ -84,7 +84,7 @@ return [
     ],
     'string'               => ':attributeには文字列を指定してください。',
     'timezone'             => ':attributeには正しい形式のタイムゾーンを指定してください。',
-    'unique'               => 'その:attributeはすでに使われています。',
+    'unique'               => 'その:attributeは既に登録されております。',
     'uploaded'             => ':attributeのアップロードに失敗しました。',
     'url'                  => ':attributeには正しい形式のURLを指定してください。',
 
@@ -118,6 +118,14 @@ return [
 
     'attributes' => [
         'password'=>'パスワード', //追記
+        'budget_date' =>'支出年月',
+        'daily_necessities' =>'日用品',
+        'food' =>'食費',
+        'education' => '教養・教育',
+        'entertainment' => '趣味・娯楽',
+        'clothing' => '衣服・美容',
+        'medical' => '健康・医療'
+
     ],
 
 ];

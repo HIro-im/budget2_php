@@ -14,6 +14,10 @@
                         </div>
                     @endif
 
+                    <form method="GET" action="{{ route('budget.index') }}">
+                    <button type="submit" class="btn btn-primary">一覧に戻る</button>
+                    </form>
+
                     <table class="table">
                       <thead>
                         <tr>
