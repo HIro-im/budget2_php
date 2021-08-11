@@ -15,8 +15,12 @@ Route::get('/', function () {
     return view('top');
 });
 
-//テスト用のルート
-Route::get('tests/test', 'TestController@index');
+Route::get('sample2', function () {
+    return view('sample2');
+});
+
+//グラフ用のルート(一旦、一つの項目に一つ用意することを想定して作成)
+Route::get('/tests/test', 'TestController@index')->middleware('auth')->name('test');;
 
 
 //支出登録用のルート
@@ -28,6 +32,9 @@ Route::group(['prefix' => 'budget', 'middleware' => 'auth'], function(){
     Route::get('edit/{id}', 'BudgetFormController@edit')->name('budget.edit');
     Route::post('update/{id}', 'BudgetFormController@update')->name('budget.update');
     Route::post('destroy/{id}', 'BudgetFormController@destroy')->name('budget.destroy');
+        Route::group(['prefix' => 'graph'], function(){
+            Route::get('daily', 'GraphController@make_daily')->name('graph.daily');
+        });
 });
 
 //計算処理用のルート

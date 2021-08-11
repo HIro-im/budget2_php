@@ -12,16 +12,18 @@
 
 <!-- chart.jsのコード -->
 <script>
-let js_array = JSON.parse('<?php echo $json_param; ?>');
-console.log(js_array);
+let js_array_label = JSON.parse('<?php echo $json_label; ?>');
+let js_array_param = JSON.parse('<?php echo $json_param; ?>');
+let js_array_name = JSON.parse('<?php echo $json_name; ?>');
+
 let ctx = document.getElementById('myChart').getContext('2d');
 let myChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ['Red', 'Blue', 'Yellow' ,'Green'],
+        labels: js_array_label,
         datasets: [{
-            label: 'as',
-            data: js_array,
+            label: js_array_name,
+            data: js_array_param,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',

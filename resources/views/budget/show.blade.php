@@ -22,7 +22,7 @@
                       <thead>
                         <tr>
                           <th scope="col">支出年月</th>
-                          <th scope="col">日用品</th>
+                          <th scope="col"><a href="{{ route('graph.daily') }}">日用品</a></th>
                           <th scope="col">食費</th>
                           <th scope="col">教養・教育</th>
                           <th scope="col">趣味・娯楽</th>

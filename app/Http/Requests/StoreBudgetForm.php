@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 
 class StoreBudgetForm extends FormRequest
 {
@@ -23,9 +25,10 @@ class StoreBudgetForm extends FormRequest
      */
     public function rules()
     {
+        $user_id = Auth::id();
         return [
             //
-            'budget_date' => 'required|unique:budget_forms',
+            'budget_date' => ['required',Rule::unique('budget_forms','budget_date')->where('user_id', $user_id)],
             'daily_necessities' => 'required|regex:/^[0-9]/|integer',
             'food' => 'required|regex:/^[0-9]/|integer',
             'education' => 'required|regex:/^[0-9]/|integer',
