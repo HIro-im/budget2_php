@@ -57,12 +57,12 @@
                     <div class="form-group row">
                         <label for="inputDaily_necesities" class="col-sm-2 col-form-label">日用品</label>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="daily_necesities" id="inputDaily_necesities0" value="0">
-                            <label class="form-check-label" for="inputDaily_necesities0">含めない</label>
+                            <input class="form-check-input" type="radio" name="daily_necessities" id="inputDaily_necessities0" value="0">
+                            <label class="form-check-label" for="inputDaily_necessities0">含めない</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="daily_necesities" id="inputDaily_necesities1" value="1" checked="checked">
-                            <label class="form-check-label" for="inputDaily_necesities1">含める</label>
+                            <input class="form-check-input" type="radio" name="daily_necessities" id="inputDaily_necessities1" value="1" checked="checked">
+                            <label class="form-check-label" for="inputDaily_necessities1">含める</label>
                         </div>
                     </div>
                     <div class="form-group row">
