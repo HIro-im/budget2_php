@@ -25,35 +25,6 @@
                     <br>
                     <br>
 
-                    <!-- 日用品
-                    <input type="radio" name="daily_necessities" value="0">含めない
-                    <input type="radio" name="daily_necessities" value="1" checked="checked">含める
-                    <br>
-                    食費
-                    <input type="radio" name="food" value="0">含めない
-                    <input type="radio" name="food" value="1" checked="checked">含める
-                    <br>
-                    教養・教育
-                    <input type="radio" name="education" value="0">含めない
-                    <input type="radio" name="education" value="1" checked="checked">含める
-                    <br>
-                    趣味・娯楽
-                    <input type="radio" name="entertainment" value="0">含めない
-                    <input type="radio" name="entertainment" value="1" checked="checked">含める  
-                    <br>
-                    衣服・美容
-                    <input type="radio" name="clothing" value="0">含めない
-                    <input type="radio" name="clothing" value="1" checked="checked">含める
-                    <br>
-                    健康・医療
-                    <input type="radio" name="medical" value="0">含めない
-                    <input type="radio" name="medical" value="1" checked="checked">含める
-                    <br>
-
-                    預金残高
-                    <input type="number" name="balance" value="0">
-                    <br> -->
-
                     <div class="form-group row">
                         <label for="inputDaily_necesities" class="col-sm-2 col-form-label">日用品</label>
                         <div class="form-check form-check-inline">

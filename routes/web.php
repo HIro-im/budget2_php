@@ -34,6 +34,7 @@ Route::group(['prefix' => 'budget', 'middleware' => 'auth'], function(){
     Route::post('destroy/{id}', 'BudgetFormController@destroy')->name('budget.destroy');
         Route::group(['prefix' => 'graph'], function(){
             Route::get('daily', 'GraphController@make_daily')->name('graph.daily');
+            Route::get('food', 'GraphController@make_food')->name('graph.food');
         });
 });
 
