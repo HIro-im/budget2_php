@@ -57,18 +57,21 @@ class GraphController extends Controller
 
         //ラベル用のデータとグラフ用のデータをそれぞれキーから分離する。
 
-        foreach($label_array as $arry){
-            foreach($arry as $key => $value){
-                $label[] = $value;
-            }
-        }
+        $label = $getparam->data_separate($label_array);
+        list($param, $data_name) = $getparam->data_separate($param_array);
 
-        foreach($param_array as $arry){
-            foreach($arry as $key => $value){
-                $param[] = $value;
-                $data_name = $key;
-            }
-        }
+        // foreach($label_array as $arry){
+        //     foreach($arry as $key => $value){
+        //         $label[] = $value;
+        //     }
+        // }
+
+        // foreach($param_array as $arry){
+        //     foreach($arry as $key => $value){
+        //         $param[] = $value;
+        //         $data_name = $key;
+        //     }
+        // }
 
         $json_label = json_encode($label);
         $json_param = json_encode($param);

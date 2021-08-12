@@ -24,4 +24,22 @@ class GraphForm extends Model
         $all_food = DB::select('SELECT food FROM budget_forms where user_id = :id ORDER BY budget_date', $param_id);
         return $all_food;
     }
+
+
+    //各データ取得が終わったら、多次元配列からデータを分離する処理が必要
+    function data_separate(array $param_array){
+        foreach($param_array as $arry){
+            foreach($arry as $key => $value){
+                $param[] = $value;
+                if ($key !== 'budget_date'){
+                    $data_name = $key;
+                }
+            }
+        }
+        //グラフの値を持っている場合にはその値とパラメータを戻り値としてセットする
+        if (isset($data_name)){
+            return array($param,$data_name);
+        }
+        return $param;
+    }
 }
