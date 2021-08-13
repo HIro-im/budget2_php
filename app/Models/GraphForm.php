@@ -8,13 +8,14 @@ use Illuminate\Support\Facades\DB;
 class GraphForm extends Model
 {
     //DBからユーザIDに紐づく値を全て取ってくる(引数にユーザIDを渡す)
-    //※戻り値が多次元配列でやってくるので、コントローラー側で加工して使う。
-    //
+    //※戻り値が多次元配列でやってくるので、別のメソッドで加工して使う。
+    //ここは、年月を取ってくるメソッド
     function get_budget_date(array $param_id){
         $budget_date = DB::select('SELECT budget_date FROM budget_forms where user_id = :id ORDER BY budget_date', $param_id);
         return $budget_date;
     }
 
+    //以下は、各項目からデータを取ってくるメソッド
     function get_budget_daily(array $param_id){
         $all_daily_necessities = DB::select('SELECT daily_necessities FROM budget_forms where user_id = :id ORDER BY budget_date', $param_id);
         return $all_daily_necessities;
@@ -25,6 +26,25 @@ class GraphForm extends Model
         return $all_food;
     }
 
+    function get_budget_education(array $param_id){
+        $all_education = DB::select('SELECT education FROM budget_forms where user_id = :id ORDER BY budget_date', $param_id);
+        return $all_education;
+    }
+
+    function get_budget_entertainment(array $param_id){
+        $all_entertainment = DB::select('SELECT entertainment FROM budget_forms where user_id = :id ORDER BY budget_date', $param_id);
+        return $all_entertainment;
+    }
+
+    function get_budget_clothing(array $param_id){
+        $all_clothing = DB::select('SELECT clothing FROM budget_forms where user_id = :id ORDER BY budget_date', $param_id);
+        return $all_clothing;
+    }
+
+    function get_budget_medical(array $param_id){
+        $all_medical = DB::select('SELECT medical FROM budget_forms where user_id = :id ORDER BY budget_date', $param_id);
+        return $all_medical;
+    }
 
     //各データ取得が終わったら、多次元配列からデータを分離する処理が必要
     function data_separate(array $param_array){

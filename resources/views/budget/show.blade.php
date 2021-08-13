@@ -24,10 +24,10 @@
                           <th scope="col">支出年月</th>
                           <th scope="col"><a href="{{ route('graph.daily') }}">日用品</a></th>
                           <th scope="col"><a href="{{ route('graph.food') }}">食費</a></th>
-                          <th scope="col">教養・教育</th>
-                          <th scope="col">趣味・娯楽</th>
-                          <th scope="col">衣服・美容</th>
-                          <th scope="col">健康・医療</th>
+                          <th scope="col"><a href="{{ route('graph.education') }}">教養・教育</a></th>
+                          <th scope="col"><a href="{{ route('graph.entertainment') }}">趣味・娯楽</a></th>
+                          <th scope="col"><a href="{{ route('graph.clothing') }}">衣服・美容</a></th>
+                          <th scope="col"><a href="{{ route('graph.medical') }}">健康・医療</a></th>
                           <th scope="col">登録日時</th>
                         </tr>
                       </thead>
