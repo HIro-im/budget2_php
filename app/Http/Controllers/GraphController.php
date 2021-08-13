@@ -15,29 +15,19 @@ class GraphController extends Controller
     //
     public function make_daily(Request $request){
 
-        //プレースホルダ用に連想配列を作り、メソッドに引き渡す
+        //プレースホルダ用に連想配列を作り、DBから値を取得するためメソッドに引き渡す
         $query_param = ['id' => Auth::id()];
 
-        //DBから値を取得して、データをキーから分離、jsonに変換して渡す。
         $getparam = new GraphForm;
         $label_array = $getparam->get_budget_date($query_param);
         $param_array = $getparam->get_budget_daily($query_param);
 
         //ラベル用のデータとグラフ用のデータをそれぞれキーから分離する。
 
-        foreach($label_array as $arry){
-            foreach($arry as $key => $value){
-                $label[] = $value;
-            }
-        }
+        $label = $getparam->data_separate($label_array);
+        list($param, $data_name) = $getparam->data_separate($param_array);
 
-        foreach($param_array as $arry){
-            foreach($arry as $key => $value){
-                $param[] = $value;
-                $data_name = $key;
-            }
-        }
-
+        //ビューファイルのchart.jsへ値を渡す為json形式にデータを変換する
         $json_label = json_encode($label);
         $json_param = json_encode($param);
         $json_name = json_encode($data_name);
@@ -47,10 +37,9 @@ class GraphController extends Controller
 
     public function make_food(Request $request){
 
-        //プレースホルダ用に連想配列を作り、メソッドに引き渡す
+        //プレースホルダ用に連想配列を作り、DBから値を取得するためメソッドに引き渡す
         $query_param = ['id' => Auth::id()];
 
-        //DBから値を取得して、データをキーから分離、jsonに変換して渡す。
         $getparam = new GraphForm;
         $label_array = $getparam->get_budget_date($query_param);
         $param_array = $getparam->get_budget_food($query_param);
@@ -60,19 +49,7 @@ class GraphController extends Controller
         $label = $getparam->data_separate($label_array);
         list($param, $data_name) = $getparam->data_separate($param_array);
 
-        // foreach($label_array as $arry){
-        //     foreach($arry as $key => $value){
-        //         $label[] = $value;
-        //     }
-        // }
-
-        // foreach($param_array as $arry){
-        //     foreach($arry as $key => $value){
-        //         $param[] = $value;
-        //         $data_name = $key;
-        //     }
-        // }
-
+        //ビューファイルのchart.jsへ値を渡す為json形式にデータを変換する
         $json_label = json_encode($label);
         $json_param = json_encode($param);
         $json_name = json_encode($data_name);

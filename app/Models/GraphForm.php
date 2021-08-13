@@ -31,15 +31,40 @@ class GraphForm extends Model
         foreach($param_array as $arry){
             foreach($arry as $key => $value){
                 $param[] = $value;
-                if ($key !== 'budget_date'){
-                    $data_name = $key;
-                }
             }
         }
-        //グラフの値を持っている場合にはその値とパラメータを戻り値としてセットする
-        if (isset($data_name)){
-            return array($param,$data_name);
+
+        //項目名を持っている場合には項目名と金額を戻り値としてセットする(戻り値を複数返す)
+        //ラベルのみの場合(=年月の場合)は年月だけを戻り値としてセットする(戻り値は一つだけ)
+
+        switch($key){
+            case 'daily_necessities':
+                $data_name = '日用品';
+                return array($param,$data_name);
+                break;
+            case 'food':
+                $data_name = '食費';
+                return array($param,$data_name);
+                break;
+            case 'education':
+                $data_name = '教養・教育';
+                return array($param,$data_name);
+                break;
+            case 'entertainment':
+                $data_name = '趣味・娯楽';
+                return array($param,$data_name);
+                break;
+            case 'clothing':
+                $data_name = '衣服・美容';
+                return array($param,$data_name);
+                break;
+            case 'medical':
+                $data_name = '健康・医療';
+                return array($param,$data_name);
+                break;
+            default:
+                return $param;
+                break;
         }
-        return $param;
     }
 }
