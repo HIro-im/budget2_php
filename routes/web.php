@@ -32,14 +32,15 @@ Route::group(['prefix' => 'budget', 'middleware' => 'auth'], function(){
     Route::get('edit/{id}', 'BudgetFormController@edit')->name('budget.edit');
     Route::post('update/{id}', 'BudgetFormController@update')->name('budget.update');
     Route::post('destroy/{id}', 'BudgetFormController@destroy')->name('budget.destroy');
-        Route::group(['prefix' => 'graph'], function(){
-            Route::get('daily', 'GraphController@make_daily')->name('graph.daily');
-            Route::get('food', 'GraphController@make_food')->name('graph.food');
-            Route::get('education', 'GraphController@make_education')->name('graph.education');
-            Route::get('entertainment', 'GraphController@make_entertainment')->name('graph.entertainment');
-            Route::get('clothing', 'GraphController@make_clothing')->name('graph.clothing');
-            Route::get('medical', 'GraphController@make_medical')->name('graph.medical');
-        });
+    Route::get('graph/{content}', 'GraphController@make_graph')->name('make.graph');
+        // Route::group(['prefix' => 'graph'], function(){
+        //     Route::get('/{content}', 'GraphController@make_daily')->name('graph.daily');
+        //     Route::get('food', 'GraphController@make_food')->name('graph.food');
+        //     Route::get('education', 'GraphController@make_education')->name('graph.education');
+        //     Route::get('entertainment', 'GraphController@make_entertainment')->name('graph.entertainment');
+        //     Route::get('clothing', 'GraphController@make_clothing')->name('graph.clothing');
+        //     Route::get('medical', 'GraphController@make_medical')->name('graph.medical');
+        // });
 });
 
 //計算処理用のルート

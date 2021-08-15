@@ -87,4 +87,26 @@ class GraphForm extends Model
                 break;
         }
     }
+
+    // function GetXXX($id, $useMethod) {
+    //     //プレースホルダ用に連想配列を作り、DBから値を取得するためメソッドに引き渡す
+    //     $query_param = ['id' => $id];
+
+    //     $getparam = new GraphForm;
+    //     $label_array = $getparam->get_budget_date($query_param);
+    //     $param_array = $getparam->$useMethod($query_param);
+        
+
+    //     //ラベル用のデータとグラフ用のデータをそれぞれキーから分離する。
+
+    //     $label = $getparam->data_separate($label_array);
+    //     list($param, $data_name) = $getparam->data_separate($param_array);
+
+    //     //ビューファイルのchart.jsへ値を渡す為json形式にデータを変換する
+    //     $json_label = json_encode($label);
+    //     $json_param = json_encode($param);
+    //     $json_name = json_encode($data_name);
+
+    //     return {'json_label' => $json_label, 'json_param' => $json_param, 'json_name' => $json_name}
+    // }
 }
