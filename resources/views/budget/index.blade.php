@@ -19,6 +19,7 @@
                     <form method="GET" action="{{ route('home') }}">
                     <button type="submit" class="btn btn-primary">メニューに戻る</button>
                     </form>
+                    <div class="table-responsive">
                     <table class="table">
                       <thead>
                         <tr>
@@ -29,24 +30,23 @@
                           <th scope="col">趣味・娯楽</th>
                           <th scope="col">衣服・美容</th>
                           <th scope="col">健康・医療</th>
-                          <th scope="col">詳細</th>
                         </tr>
                       </thead>
                       <tbody>
                           @foreach($budgets as $budget)
                           <tr>
-                          <th>{{ $budget->budget_date}}</th>
+                          <th><a href="{{ route('budget.show', ['id' => $budget->id]) }}">{{ $budget->budget_date}}</a></th>
                           <td>{{ $budget->daily_necessities}}</td>
                           <td>{{ $budget->food}}</td>
                           <td>{{ $budget->education}}</td>
                           <td>{{ $budget->entertainment}}</td>
                           <td>{{ $budget->clothing}}</td>
                           <td>{{ $budget->medical}}</td>
-                          <td><a href="{{ route('budget.show', ['id' => $budget->id]) }}">詳細</a></td>
                           </tr>
                           @endforeach
                       </tbody>
                     </table>
+                    </div>
                 </div>
             </div>
         </div>

@@ -94,7 +94,7 @@
 
                     <div class="form-group row">
                         <label for="inputBalance" class="col-sm-2 col-form-label">預金残高</label>
-                        <div class="col-sm-8">
+                        <div class="col-sm-4">
                         <input type="number" class="form-control" id="inputBalance" name="balance" value="0">
                         </div>
                     </div>

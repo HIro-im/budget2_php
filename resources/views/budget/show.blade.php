@@ -17,7 +17,7 @@
                     <form method="GET" action="{{ route('budget.index') }}">
                     <button type="submit" class="btn btn-primary">一覧に戻る</button>
                     </form>
-
+                    <div class="table-responsive">
                     <table class="table">
                       <thead>
                         <tr>
@@ -28,7 +28,6 @@
                           <th scope="col"><a href="{{ route('make.graph', ['content' => 'entertainment']) }}">趣味・娯楽</a></th>
                           <th scope="col"><a href="{{ route('make.graph', ['content' => 'clothing']) }}">衣服・美容</a></th>
                           <th scope="col"><a href="{{ route('make.graph', ['content' => 'medical']) }}">健康・医療</a></th>
-                          <th scope="col">登録日時</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -40,10 +39,10 @@
                           <td>{{ $budget_month->entertainment}}</td>
                           <td>{{ $budget_month->clothing}}</td>
                           <td>{{ $budget_month->medical}}</td>
-                          <td>{{ $budget_month->created_at}}</td>
                           </tr>
                       </tbody>
                     </table>
+                    </div>
                     <form method="GET" action="{{route('budget.edit', ['id' => $budget_month->id])}}">
                     @csrf
 
