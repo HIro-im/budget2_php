@@ -19,11 +19,8 @@ Route::get('sample2', function () {
     return view('sample2');
 });
 
-//グラフ用のルート(一旦、一つの項目に一つ用意することを想定して作成)
-Route::get('/tests/test', 'TestController@index')->middleware('auth')->name('test');;
 
-
-//支出登録用のルート
+//支出登録用のルートとグラフ出力用のルート
 Route::group(['prefix' => 'budget', 'middleware' => 'auth'], function(){
     Route::get('index', 'BudgetFormController@index')->name('budget.index');
     Route::get('create', 'BudgetFormController@create')->name('budget.create');

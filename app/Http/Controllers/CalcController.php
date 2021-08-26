@@ -33,7 +33,7 @@ class CalcController extends Controller
 
         $getavg = new Calc;
         
-        list($daily_necessities_avg, $food_avg, $education_avg, $entertainment_avg, $clothing_avg, $medical_avg, $avg_sum) = $getavg->get_calc_avg($request);
+        list($daily_necessities_avg, $food_avg, $education_avg, $entertainment_avg, $clothing_avg, $medical_avg, $avg_sum, $select_name) = $getavg->get_calc_avg($request);
 
         //計算前に小数点以下を切り捨てておく
         $avg_sum = floor($avg_sum);
@@ -42,8 +42,7 @@ class CalcController extends Controller
         $number_of_months = floor($balance / $avg_sum);
 
 
-
-    return view('calc.result', compact('daily_necessities_avg','food_avg','education_avg','entertainment_avg','clothing_avg','medical_avg','avg_sum','number_of_months'));
+    return view('calc.result', compact('daily_necessities_avg','food_avg','education_avg','entertainment_avg','clothing_avg','medical_avg','avg_sum','number_of_months','select_name'));
     }
 
 }

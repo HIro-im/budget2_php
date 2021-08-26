@@ -19,31 +19,6 @@
 
                     <form method="GET" action="{{ route('calc.result') }}">
                     @csrf
-                    <!-- 日用品 平均支出額
-                    <input type="text" name="daily_necessities" value={{$daily_necessities_avg}} readonly='readonly'>円
-                    <br>
-                    食費 平均支出額
-                    <input type="text" name="food" value={{$food_avg}} readonly='readonly'>円
-                    <br>
-                    教養・教育 平均支出額
-                    <input type="text" name="education" value={{$education_avg}} readonly='readonly'>円
-                    <br>
-                    趣味・娯楽 平均支出額
-                    <input type="text" name="entertainment" value="{{$entertainment_avg}}" readonly='readonly'>円
-                    <br>
-                    衣服・美容 平均支出額
-                    <input type="textbox" name="clothing" value="{{$clothing_avg}}" readonly='readonly'>円
-                    <br>
-                    健康・医療 平均支出額
-                    <input type="textbox" name="medical" value="{{$medical_avg}}" readonly='readonly'>円
-                    <br>
-
-                    無収入での生活可能期間
-                    <input type="number" name="term" value={{$number_of_months}} readonly='readonly'>ヶ月
-                    <br>
-                    固定費の合計額
-                    <input type="number" name="term" value={{$avg_sum}} readonly='readonly'>円
-                    <br> -->
                     <div class="form-group row">
                         <label for="inputDaily_necessities" class="col-sm-2 col-form-label">日用品 平均支出額</label>
                         <div class="col-sm-6">
@@ -94,6 +69,12 @@
                         <label for="sum_fix" class="col-sm-2 col-form-label">固定費の合計額</label>
                         <div class="col-sm-6">
                         <input type="text" class="form-control" name="sum_fix" id="sum_fix" value={{$avg_sum}} readonly='readonly'>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="sum_fix" class="col-sm-2 col-form-label">選択された項目名</label>
+                        <div class="col-sm-6">
+                        <input type="text" class="form-control" name="select_name" id="select_name" value={{$select_name}} readonly='readonly'>
                         </div>
                     </div>
 
