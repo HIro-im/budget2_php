@@ -71,7 +71,7 @@
                         <input type="text" class="form-control" name="sum_fix" id="sum_fix" value={{$avg_sum}} readonly='readonly'>
                         </div>
                     </div>
-                    <div>
+                    <div class="form-group row">
                         <label for="sum_fix" class="col-sm-2 col-form-label">選択された項目名</label>
                         <div class="col-sm-6">
                         <input type="text" class="form-control" name="select_name" id="select_name" value={{$select_name}} readonly='readonly'>
