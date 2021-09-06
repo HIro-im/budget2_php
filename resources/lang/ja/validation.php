@@ -124,7 +124,8 @@ return [
         'education' => '教養・教育',
         'entertainment' => '趣味・娯楽',
         'clothing' => '衣服・美容',
-        'medical' => '健康・医療'
+        'medical' => '健康・医療',
+        'balance' => '預金残高'
 
     ],
 

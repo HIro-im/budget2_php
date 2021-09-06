@@ -25,6 +25,15 @@
                     <br>
                     <br>
 
+                    @if ($errors->any())
+                        <ul>
+                            @foreach ($errors->all() as $message)
+                            <!-- 全てのエラーメッセージを出力 -->
+                            <li>{{ $message }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
+
                     <div class="form-group row">
                         <label for="inputDaily_necesities" class="col-sm-2 col-form-label">日用品</label>
                         <div class="form-check form-check-inline">

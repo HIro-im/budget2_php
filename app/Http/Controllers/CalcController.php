@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CalcForm;
 use Illuminate\Http\Request;
 use App\Models\Calc;
 
@@ -23,7 +24,7 @@ class CalcController extends Controller
     }
 
     // 平均金額計算と何か月持つかを算出する
-    public function result(Request $request)
+    public function result(CalcForm $request)
     {
         //
         //入力した預金残高を変数に退避する
