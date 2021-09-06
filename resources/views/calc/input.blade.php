@@ -27,9 +27,20 @@
 
                     @if ($errors->any())
                         <ul>
+                            <!-- メッセージ重複チェックのための変数を定義 -->                            
+                            @php 
+                                $check_message = '';
+                            @endphp
                             @foreach ($errors->all() as $message)
-                            <!-- 全てのエラーメッセージを出力 -->
-                            <li>{{ $message }}</li>
+                                <!-- 全てのエラーメッセージを出力(内容が重複したら出力しない) -->
+                                @if ($check_message == $message)
+                                    @php continue; @endphp
+                                @else
+                                    <li>{{ $message }}</li>
+                                @endif
+                                @php 
+                                    $check_message = $message;
+                                @endphp
                             @endforeach
                         </ul>
                     @endif
