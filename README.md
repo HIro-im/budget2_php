@@ -62,7 +62,7 @@
  
 　・MySQL
 
-　・heroku
+　・Heroku
 
 ## License
 
