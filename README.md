@@ -1,77 +1,73 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+## 家計管理補助ツールの紹介
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
 
-## About Laravel
+## ツール開発の経緯
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+　近年、社会情勢の不透明さから、様々な不安に見舞われる傾向がみられ、経済的な不安というのも表出していることが			
+見受けられる。			
+			
+　また、それとは反対に、FIREと呼ばれる早期に経済的な自立を得て、リタイアをするということを望む人も増加している。			
+			
+　それぞれ、原因は異なるるものの、自身の経済状況について安定を図りたいという傾向は存在している。			
+			
+　そのためには、収入はもちろん、自身が1ヶ月過ごすためにはいくらかかるかを把握してなければならない。
+家計簿をつけていれば大まかな金額はわかるが、今までの金額から平均値を割り出しておけば、			
+大きく外れる金額とはならないだろう。			
+			
+　そして、仮に雇用が無くなったとしても、自身の保有資産と平均の支出額を知っておけば、次の職を探すためのリミットが
+ある程度正確に把握できるため、方針も立てやすくなるだろう。			
+			
+　本ツールでは、毎月の支出額を記録することで、平均金額の算出と現時点での保有財産から、どれくらいの期間無収入での生活が			
+可能であるかを割り出すことを目的とする。			
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 実装する機能
 
-## Learning Laravel
+■ログイン機能	
+ 
+　・金額の記録及び平均値の算出のため、個人を識別する	
+ 
+![スクリーンショット (6)](https://user-images.githubusercontent.com/82436202/132971737-303cf193-593e-47c0-9aa4-c48b385100b8.png)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+	
+■支出表示・登録・確認・修正・削除機能	
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+　・ログインしたユーザごとに、登録されている金額を表示する。	
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
+　・1ヶ月単位で、食費や日用品といった支出項目ごとの支出金額を登録する。	
 
-## Contributing
+　・金額を登録した日を確認できるようにする。	
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+　・項目や月が誤っていた場合に、金額を修正することを可能とする。	
 
-## Code of Conduct
+　・その月のデータを削除したい場合に、削除できるようにする。	
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+　・各項目ごとに、登録してきたデータをもとにして推移が分かる棒グラフを作成する。	
 
-## Security Vulnerabilities
+	
+■固定費計算処理機能	
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+　・蓄積していた支出金額をもとに、平均値を求める	
+
+　(0円で登録している月も含める)	
+
+　・1ヶ月の支出として外せない項目(＝固定費)を選択して、保有資産と比較して何か月無収入で過ごせるかを計算する。	
+
+　(算出を行う際には、小数点以下切り捨てで月数を算出する)	
+
+## 使用した言語／技術
+
+　・PHP(8.0.7)
+
+　・Laravel(6.20.27)
+ 
+　・JavaScript(chart.js)
+ 
+　・MySQL
+
+　・Heroku
 
 ## License
 
