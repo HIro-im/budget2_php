@@ -45,29 +45,23 @@
                       </tbody>
                     </table>
                     </div>
-                    <form method="GET" action="{{route('budget.edit', ['id' => $budget_month->id])}}">
-                    @csrf
+                    <div class="btn-group" role="group">
+                        <form method="GET" action="{{route('budget.edit', ['id' => $budget_month->id])}}">
+                        @csrf
 
-                    <input class="btn btn-info" type="submit" value="修正する">
-                    </form>
+                        <input class="btn btn-info" type="submit" value="修正する">
+                       </form>
 
-                    <form method="POST" action="{{route('budget.destroy', ['id' => $budget_month->id])}}" id="delete_{{ $budget_month->id }}" >
-                    @csrf
-                    <a href="#" class="btn btn-danger" data-id="{{ $budget_month->id }}" onclick="deletePost(this);">削除する</a>
-                    </form>
+                        <form method="POST" action="{{route('budget.destroy', ['id' => $budget_month->id])}}" id="delete_{{ $budget_month->id }}" >
+                        @csrf
+                        <input class="btn btn-danger" type="submit" value="削除する">
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<script>
-function deletePost(e){
-    'use strict'
-    if (confirm('本当に削除していいですか')) {
-        document.getElementById('delete_' + e.dataset.id).submit();
-    }
-}
-</script>
 
 @endsection
