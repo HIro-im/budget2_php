@@ -21,6 +21,7 @@
                       <thead>
                         <tr>
                           <th scope="col">支出年月</th>
+                          <!-- 項目追加が発生した場合、以下の項目を追加していく -->
                           <th scope="col">日用品</th>
                           <th scope="col">食費</th>
                           <th scope="col">教養・教育</th>
@@ -33,6 +34,7 @@
                           @foreach($budgets as $budget)
                           <tr>
                           <th><a href="{{ route('budget.show', ['id' => $budget->id]) }}">{{ $budget->budget_date}}</a></th>
+                          <!-- 項目追加が発生した場合、以下の項目を追加していく -->
                           <td>{{ $budget->daily_necessities}}</td>
                           <td>{{ $budget->food}}</td>
                           <td>{{ $budget->education}}</td>

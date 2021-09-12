@@ -19,6 +19,7 @@
 
                     <form method="GET" action="{{ route('calc.result') }}">
                     @csrf
+                    <!-- 項目追加が発生した場合、以下の項目を追加していく -->
                     <div class="form-group row">
                         <label for="inputDaily_necessities" class="col-sm-2 col-form-label">日用品 平均支出額</label>
                         <div class="col-sm-6">

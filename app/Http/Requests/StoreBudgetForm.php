@@ -27,8 +27,8 @@ class StoreBudgetForm extends FormRequest
     {
         $user_id = Auth::id();
         return [
-            //
             'budget_date' => ['required',Rule::unique('budget_forms','budget_date')->where('user_id', $user_id)],
+            // 項目追加が発生した場合、以下の項目を追加していく
             'daily_necessities' => 'required|regex:/^[0-9]/|integer',
             'food' => 'required|regex:/^[0-9]/|integer',
             'education' => 'required|regex:/^[0-9]/|integer',

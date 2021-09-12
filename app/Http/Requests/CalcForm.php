@@ -36,6 +36,7 @@ class CalcForm extends FormRequest
             $input_data = $this->all();
     
             // 条件に合致しなかったら失敗
+            // 項目追加が発生した場合、以下の項目を追加していく
             if (1 <= $input_data['daily_necessities'] == 0 
             && $input_data['food'] == 0 
             && $input_data['education'] == 0
@@ -49,7 +50,7 @@ class CalcForm extends FormRequest
 
         $user_id = Auth::id();
         return [
-            //
+            // 項目追加が発生した場合、以下の項目を追加していく
             'balance' => 'required|min:1|integer',
             'daily_necessities' => $item_count_validation,
             'food' => $item_count_validation,

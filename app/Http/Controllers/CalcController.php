@@ -33,7 +33,7 @@ class CalcController extends Controller
         $avg_sum = 0;
 
         $getavg = new Calc;
-        
+        // 項目追加が発生した場合、以下の項目を追加していく
         list($daily_necessities_avg, $food_avg, $education_avg, $entertainment_avg, $clothing_avg, $medical_avg, $avg_sum, $select_name) = $getavg->get_calc_avg($request);
 
         //計算前に小数点以下を切り捨てておく

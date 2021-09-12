@@ -117,8 +117,10 @@ return [
     */
 
     'attributes' => [
-        'password'=>'パスワード', //追記
+        'password'=>'パスワード', //追記            
         'budget_date' =>'支出年月',
+        // 項目追加が発生した場合、以下の項目を追加していく
+        
         'daily_necessities' =>'日用品',
         'food' =>'食費',
         'education' => '教養・教育',

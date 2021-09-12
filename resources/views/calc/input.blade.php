@@ -44,7 +44,7 @@
                             @endforeach
                         </ul>
                     @endif
-
+                    <!-- 項目追加が発生した場合、以下の項目を追加していく -->
                     <div class="form-group row">
                         <label for="inputDaily_necesities" class="col-sm-2 col-form-label">日用品</label>
                         <div class="form-check form-check-inline">

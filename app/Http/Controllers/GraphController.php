@@ -23,6 +23,7 @@ class GraphController extends Controller
         $getparam = new GraphForm;
         $label_array = $getparam->get_budget_date($query_param);
 
+        // 項目追加が発生した場合、以下の処理に項目を追加する
         switch($content){
             case 'daily':
                 $param_array = $getparam->get_budget_daily($query_param);

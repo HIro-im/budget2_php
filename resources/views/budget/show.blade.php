@@ -22,6 +22,7 @@
                       <thead>
                         <tr>
                           <th scope="col">支出年月</th>
+                          <!-- 項目追加が発生した場合、以下の項目を追加していく -->
                           <th scope="col"><a href="{{ route('make.graph', ['content' => 'daily']) }}">日用品</a></th>
                           <th scope="col"><a href="{{ route('make.graph', ['content' => 'food']) }}">食費</a></th>
                           <th scope="col"><a href="{{ route('make.graph', ['content' => 'education']) }}">教養・教育</a></th>
@@ -33,6 +34,7 @@
                       <tbody>
                           <tr>
                           <th>{{ $budget_month->budget_date}}</th>
+                          <!-- 項目追加が発生した場合、以下の項目を追加していく -->
                           <td>{{ $budget_month->daily_necessities}}</td>
                           <td>{{ $budget_month->food}}</td>
                           <td>{{ $budget_month->education}}</td>

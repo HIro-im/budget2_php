@@ -16,10 +16,12 @@ class GraphForm extends Model
     }
 
     //以下は、各項目からデータを取ってくるメソッド
+    // 項目追加が発生した場合、以下の処理を追加していく(start)
     function get_budget_daily(array $param_id){
         $all_daily_necessities = DB::select('SELECT daily_necessities FROM budget_forms where user_id = :id ORDER BY budget_date', $param_id);
         return $all_daily_necessities;
     }
+    // 項目追加が発生した場合、上記の処理を追加していく(end)
 
     function get_budget_food(array $param_id){
         $all_food = DB::select('SELECT food FROM budget_forms where user_id = :id ORDER BY budget_date', $param_id);
@@ -56,6 +58,7 @@ class GraphForm extends Model
 
         //項目名を持っている場合には項目名と金額を戻り値としてセットする(戻り値を複数返す)
         //ラベルのみの場合(=年月の場合)は年月だけを戻り値としてセットする(戻り値は一つだけ)
+        // 項目追加が発生した場合、以下の処理に項目を追加していく
 
         switch($key){
             case 'daily_necessities':

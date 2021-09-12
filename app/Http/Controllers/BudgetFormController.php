@@ -20,7 +20,7 @@ class BudgetFormController extends Controller
      */
     public function index()
     {
-        //
+        // 項目追加が発生した場合、下記のselect文の項目を追加していく
 
         $budgets = DB::table('budget_forms')
         ->select('id', 'budget_date', 'daily_necessities', 'food', 'education', 'entertainment', 'clothing', 'medical')
@@ -55,6 +55,7 @@ class BudgetFormController extends Controller
 
         $budget = new BudgetForm;
 
+        // 項目追加が発生した場合、下記の項目を追加していく
         $budget->budget_date = $request->input('budget_date');
         $budget->user_id = Auth::id();
         $budget->daily_necessities = $request->input('daily_necessities');
@@ -111,6 +112,7 @@ class BudgetFormController extends Controller
         $budget_month = BudgetForm::find($id);
 
         //バリデーション(新規作成とは違い、同じ年月のデータを入れられるようにする)
+        // 項目追加が発生した場合、下記のバリデーション項目を追加していく
         Validator::make($request->all(),[
             'budget_date' => ['required',Rule::unique('budget_forms')->ignore($id)],
             'daily_necessities' => ['required','regex:/^[0-9]/','integer'],
@@ -121,7 +123,7 @@ class BudgetFormController extends Controller
             'medical' => ['required','regex:/^[0-9]/','integer']
         ])->validate();
 
-
+        // 項目追加が発生した場合、下記の項目を追加していく
         $budget_month->budget_date = $request->input('budget_date');
         $budget_month->user_id = Auth::id();
         $budget_month->daily_necessities = $request->input('daily_necessities');

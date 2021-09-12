@@ -15,6 +15,7 @@ class Calc extends Model
         $select_name = '';
         
         //平均金額を算出する(AVGで算出)。また、ラジオボタンが【含める】となっている場合、avg_sumに各値を加算する。
+        // 項目追加が発生した場合、以下の処理を追加していく(start)
         $daily_necessities_avg = DB::table('budget_forms')->where('user_id', '=', Auth::id())
         ->avg('daily_necessities');
         $daily_necessities_avg = floor($daily_necessities_avg);
@@ -22,6 +23,7 @@ class Calc extends Model
             $avg_sum += $daily_necessities_avg;
             $select_name .= '日用品／';
         }
+        // 項目追加が発生した場合、上記の処理を追加していく(end)
 
 
         $food_avg = DB::table('budget_forms')->where('user_id', '=', Auth::id())
