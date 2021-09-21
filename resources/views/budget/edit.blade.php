@@ -15,32 +15,11 @@
                     @endif
 
                     <form method="GET" action="{{ route('budget.show', ['id' => $budget_month->id ]) }}">
-                    <button type="submit" class="btn btn-primary">詳細画面に戻る</button>
+                    <button type="submit" class="btn btn-primary">詳細画面へ</button>
                     </form>
 
                     <form method="POST" action="{{ route('budget.update', ['id' => $budget_month->id ]) }}">
                     @csrf
-                    <!-- 支出年月 仮でINT型で取るようにする  -->
-                    <!-- <input type="month" name="budget_date" value="{{ $budget_month->budget_date }}">
-                    <br>
-                    日用品
-                    <input type="number" name="daily_necessities" value="{{ $budget_month->daily_necessities }}">円
-                    <br>
-                    食費
-                    <input type="number" name="food" value="{{ $budget_month->food }}">円
-                    <br>
-                    教養・教育
-                    <input type="number" name="education" value="{{ $budget_month->education }}">円
-                    <br>
-                    趣味・娯楽
-                    <input type="number" name="entertainment" value="{{ $budget_month->entertainment }}">円
-                    <br>
-                    衣服・美容
-                    <input type="number" name="clothing" value="{{ $budget_month->clothing }}">円
-                    <br>
-                    健康・医療
-                    <input type="number" name="medical" value="{{ $budget_month->medical }}">円
-                    <br> -->
 
                     @if ($errors->any())
                         <ul>
@@ -54,7 +33,7 @@
                     <div class="form-group row">
                         <label for="inputMonth" class="col-sm-2 col-form-label">支出年月</label>
                         <div class="col-sm-8">
-                        <input type="month" class="form-control" id="inputMonth" name="budget_date" value="{{ $budget_month->budget_date }}">
+                        <input type="month" class="form-control" id="inputMonth" name="budget_date" value="{{ $budget_month->budget_date }}" readonly='readonly'>
                         </div>
                     </div>
                     <!-- 項目追加が発生した場合、以下の項目を追加していく -->
