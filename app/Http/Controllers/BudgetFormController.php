@@ -113,7 +113,7 @@ class BudgetFormController extends Controller
 
         //バリデーション(新規作成とは違い、同じ年月のデータを入れられるようにする)
         // 項目追加が発生した場合、下記のバリデーション項目を追加していく
-        dd($id);
+        dd($budget_month);
         Validator::make($request->all(),[
             'budget_date' => ['required',Rule::unique('budget_forms')->ignore($id)],
             'daily_necessities' => ['required','regex:/^[0-9]/','integer'],
