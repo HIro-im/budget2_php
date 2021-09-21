@@ -94,7 +94,6 @@ class BudgetFormController extends Controller
     public function edit($id)
     {
         //
-        dd($id);
         $budget_month = BudgetForm::find($id);
 
         return view('budget.edit', compact('budget_month'));
@@ -114,6 +113,7 @@ class BudgetFormController extends Controller
 
         //バリデーション(新規作成とは違い、同じ年月のデータを入れられるようにする)
         // 項目追加が発生した場合、下記のバリデーション項目を追加していく
+        $id = preg_replace('/[^0-9]/', '', $id);
         dd($id);
         Validator::make($request->all(),[
             'budget_date' => ['required',Rule::unique('budget_forms')->ignore($id)],
