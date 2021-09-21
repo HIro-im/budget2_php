@@ -94,6 +94,7 @@ class BudgetFormController extends Controller
     public function edit($id)
     {
         //
+        dd($id);
         $budget_month = BudgetForm::find($id);
 
         return view('budget.edit', compact('budget_month'));
