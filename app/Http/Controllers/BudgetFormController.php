@@ -111,9 +111,12 @@ class BudgetFormController extends Controller
         //詳細画面にて選択している月を修正する。
         $budget_month = BudgetForm::find($id);
 
+        $id2 = preg_replace('/[^0-9]/', '', $id);
+
         //バリデーション(新規作成とは違い、同じ年月のデータを入れられるようにする)
         // 項目追加が発生した場合、下記のバリデーション項目を追加していく
         Validator::make($request->all(),[
+            'budget_date' => ['required',Rule::unique('budget_forms')->ignore($id2)],
             'daily_necessities' => ['required','regex:/^[0-9]/','integer'],
             'food' => ['required','regex:/^[0-9]/','integer'],
             'education' => ['required','regex:/^[0-9]/','integer'],

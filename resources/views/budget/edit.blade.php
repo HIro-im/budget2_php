@@ -33,7 +33,7 @@
                     <div class="form-group row">
                         <label for="inputMonth" class="col-sm-2 col-form-label">支出年月</label>
                         <div class="col-sm-8">
-                        <input type="month" class="form-control" id="inputMonth" name="budget_date" value="{{ $budget_month->budget_date }}" readonly='readonly'>
+                        <input type="month" class="form-control" id="inputMonth" name="budget_date" value="{{ $budget_month->budget_date }}">
                         </div>
                     </div>
                     <!-- 項目追加が発生した場合、以下の項目を追加していく -->
