@@ -115,8 +115,10 @@ class BudgetFormController extends Controller
 
         //バリデーション(新規作成とは違い、同じ年月のデータを入れられるようにする)
         // 項目追加が発生した場合、下記のバリデーション項目を追加していく
+        // ユーザIDが合致するレコードを対象として年月の重複チェックを行う
+        // ※ただし、現在のレコードは重複チェックの対象とはしない
         Validator::make($request->all(),[
-            'budget_date' => ['required',Rule::unique('budget_forms')->ignore($id2)],
+            'budget_date' => ['required',Rule::unique('budget_forms')->where('user_id', $budget_month->user_id)->ignore($id2)],
             'daily_necessities' => ['required','regex:/^[0-9]/','integer'],
             'food' => ['required','regex:/^[0-9]/','integer'],
             'education' => ['required','regex:/^[0-9]/','integer'],
