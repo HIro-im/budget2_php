@@ -111,6 +111,7 @@ class BudgetFormController extends Controller
         //詳細画面にて選択している月を修正する。
         $budget_month = BudgetForm::find($id);
 
+        // ユーザIDについて、余計な文言が入らないように正規表現でチェックする
         $id2 = preg_replace('/[^0-9]/', '', $id);
 
         //バリデーション(新規作成とは違い、同じ年月のデータを入れられるようにする)
